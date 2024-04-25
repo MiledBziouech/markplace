@@ -1,9 +1,11 @@
 import { View, Text ,StyleSheet} from 'react-native'
 import React from 'react'
 import { CircularProgress  } from 'react-native-circular-progress';
-export default function CommonBoxStats({fill,text}) {
 
 
+export default function CircleProgress({fill,text}) {
+
+    
   return (
     
     <View style={styles.mainContainer}>

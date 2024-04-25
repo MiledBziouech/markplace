@@ -1,6 +1,7 @@
 import React from "react";
-import {View,Image,StyleSheet,Text,StatusBar, SafeAreaView, TouchableOpacity} from 'react-native';
-import { faLessThan, faBell, faGear, faBolt,faGem } from '@fortawesome/free-solid-svg-icons';
+import {View,Image,StyleSheet,Text, SafeAreaView, TouchableOpacity, StatusBar} from 'react-native';
+import * as Progress from 'react-native-progress';
+import { faLessThan, faBell, faGear ,faGem,faBolt} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 const Ride = () =>{
@@ -27,64 +28,62 @@ const Ride = () =>{
                         <FontAwesomeIcon icon={faGear} size={30} color="#FFFFFF" />
                     </TouchableOpacity>
                 </View>
-                <View>
-                    <Image source={require('../assets/Ride.png')} />
-                    <View>
+                <View style={{alignItems:'center'}}>
+                  <View style={styles.frame1} >
+                    <Image source={require('../assets/Ride.png')} style={styles.Stats} />
+                    <View style={{flexDirection:'row'}}>
                         <View>
-                            <Text>Rarity</Text>
-                            
-                            <TouchableOpacity>
+                            <Text style={styles.text1}>Rarity</Text>
+                            <TouchableOpacity style={styles.IconButton} >
                                 <View style={{flexDirection:'row'}}>
-                                <FontAwesomeIcon icon={faGem} color='purple' />
-                                <Text>Legendary</Text>
-                                </ View>
+                                    <FontAwesomeIcon icon={faGem} style={{color: "#B197FC",}} />
+                                    <Text style={styles.textIcon}>Legendary</Text>
+                                </View>
                             </TouchableOpacity>
-                            
                         </View>
                         <View>
-                            <Text>Energy</Text>
-                            <TouchableOpacity>
-                                <FontAwesomeIcon icon={faBolt} color='yellow'/>
-                                <Text>45 mins</Text>
+                            <Text style={styles.text1} >Energy</Text>
+                            <TouchableOpacity style={styles.IconButton}>
+                                <View style={{flexDirection:'row'}}>
+                                    <FontAwesomeIcon icon={faBolt} style={{color: "#FFD43B",}} />
+                                    <Text style={styles.textIcon}>45 mins</Text>
+                                </View>
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View>
-                            <Text>BLUE WOLF-LR01</Text>
-                            <Text>980 PMT</Text>
-                        </View>
-                    <View style = {styles.frame1}>
+                  </View>
+
+
+                  <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'flex-start',marginTop:10}}>
+                        <Text style={styles.textImage}>BLUE WOLF-LR01</Text>
+                        <Text style={styles.textMoney}>980 PMT</Text>
+                    </View>
+                    
+
+
+
+                    <View style ={styles.frame2}>
                         <View>
-                            <Text>Rarity</Text>
-                            <Text>Legendary</Text>
+                            <Text style={styles.textStat}>Rarity</Text>
+                            <Text style={styles.textStat}>level</Text>
+                            <Text style={styles.textStat}>Energy</Text>
+                            <Text style={styles.textStat}>Reward Ratio</Text>
                         </View>
                         <View>
-                            <Text>Level</Text>
-                            <Text>01</Text>
-                        </View>
-                        <View>
-                            <Text>Energy</Text>
-                            <Text>45 mins</Text>
-                        </View>
-                        <View>
-                            <Text>Rewaed ratio</Text>
-                            <Text>1.6</Text>
+                            <Text style={styles.textStat}>Legendary</Text>
+                            <Text style={styles.textStat}>01</Text>
+                            <Text style={styles.textStat}>45 mins</Text>
+                            <Text style={styles.textStat}>1.6</Text>
                         </View>
                     </View>
-                    <View>
-                    <TouchableOpacity>
-                        <Text>
-                            Buy
-                        </Text>
+
+                    <View style={{flexDirection:'row'}}>
+                    <TouchableOpacity style={styles.button1}>
+                        <Text style={styles.textButton1} >Buy</Text>
                     </TouchableOpacity>
                     <View>
-                    <TouchableOpacity>
-                        <Text>Add to favorites</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <Text>
-                            Buy & equip
-                        </Text>
+                    <TouchableOpacity style={styles.button2}>
+                        <Text style={styles.textButton2}>Add to favorites</Text>
                     </TouchableOpacity>
                     </View>
                     </View>
@@ -94,29 +93,132 @@ const Ride = () =>{
 }
 
 const styles = StyleSheet.create({
-    buttonn:{
+    IconButton:{
+        backgroundColor: '#407AFF',
+        borderRadius: 20,
+        //paddingHorizontal: 10,
+        paddingVertical: 10,
+        height: 45,
+        marginTop: 20,
+        width:120,
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf:'center',
+    },
+    textIcon:{
+        color: '#FFFFFF',
+        fontSize: 17,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginRight:5 ,
+        alignSelf:'center',
+        marginLeft:10,
+    },
+    text1:{
+        color: '#FFFFFF',
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginRight:45 ,
+        marginTop:10,
+        marginLeft:35,
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf:'center',
+    },
+    textStat:{
+        color: '#FFFFFF',
+        fontSize: 17,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        justifyContent: 'center',
+        marginRight:85 ,
+        alignSelf:'flex-start',
+        marginTop:10,
+        marginLeft:20,
+    },
+    textMoney:{
+        color: '#FFFFFF',
+        fontSize: 17,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    textImage:{ 
+        color: '#FFFFFF',
+        fontSize: 17,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        alignItems: 'flex-start',
+        marginRight:120 ,     
+    },
+    textCircle:{
+        color: '#FFFFFF',
+        fontSize: 20,
+        fontWeight: 'bold',
+        alignSelf:'auto',
+        marginRight:70 ,
+    },
+    frame2:{
+        flexDirection: 'row',
+        backgroundColor:'#222834',
+        width:'90%',
+        height:'22%',
+        marginTop:10,
+        alignItems: 'baseline',
+        borderRadius: 20,
+        alignItems: 'flex-start',
+        
+    },
+    frame1:{
+        backgroundColor:'#222834',
+        width:'90%',
+        height:'55%',
+        marginTop:25,
+        borderRadius:25,
+        justifyContent: 'center',
+        alignItems: 'center', 
+        borderRadius: 20,
+    },
+    
+    Stats:{
+        width:'120%',
+        height:240,
+        position:'relative',
+        justifyContent: 'center',
+        marginBottom:5,
+        
+    },
+    button1:{
         backgroundColor: '#407AFF',
         borderRadius: 20,
         paddingHorizontal: 10,
         paddingVertical: 10,
-        height: 35,
+        height: 40,
         marginTop: 10,
         width:175,
     },
-    textButtonn:{
+    button2:{
+        backgroundColor: '#2D2D2D',
+        borderRadius: 20,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        height: 40,
+        marginTop: 10,
+        width:175,
+        borderColor:'#407AFF',
+        borderWidth:1,
+    },
+    textButton1:{
         color: '#FFFFFF',
         fontSize: 15,
         fontWeight: 'bold',
         textAlign: 'center',
     },
-    frame1:{
-        backgroundColor:'#222834',
-        width:250,
-        height:250,
-        marginTop:25,
-        borderRadius:25,
-        justifyContent: 'center',
-        alignItems: 'center', 
+    textButton2:{
+        color: '#407AFF',
+        fontSize: 15,
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
     container: {
         flexDirection: 'row',

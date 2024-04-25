@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 
 
+
 const Market =() =>{
   const [buttonPressed, setButtonPressed] = useState(false);
 
@@ -43,6 +44,7 @@ const Market =() =>{
       <NavigationContainer>
         <AppNavigator />
       </NavigationContainer>
+     
     
     </SafeAreaView>
   );

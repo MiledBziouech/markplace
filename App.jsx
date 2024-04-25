@@ -12,12 +12,15 @@ import Ride from './Screen/Ride.js';
 import CustomProgressBar from './Screen/CustomProgressBar.js';
 import Runners from './Screen/Runners.js';
 import Market from'./Screen/Market.js';
-import R from './Screen/R.js';
+import R from './Screen/CircleProgress.js';
 import Map2Screen from './Screen/Map2Screen.js';
+import Hourglass from './Screen/Hourglass.js';
+import BoxStats from './Screen/BoxStats.js';
+import AllScreen from './Screen/AllScreen.js';
 
 const App = () => {
   return(
-      <Map2Screen />
+      <Runners />
   )}
 
 export default App;

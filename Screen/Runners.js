@@ -45,23 +45,23 @@ const Runners = () =>{
                         </View>
                     </View>
                     <View style={styles.frame2}>
-                    <View style={styles.progress}>
+                    <View style={styles.frameProgress}>
                             <Text style={styles.textProgress}>XP ratio</Text>
-                            <View style={{ height: 10, width: 200 }}>
-                                <Progress.Bar progress={0.6} width={200} height={10} color='#407AFF' backgroundColor='#FFFFFF' />
-                            </View>
+                            
+                            <Progress.Bar style={styles.progres} progress={0.6} width={170} height={10}  borderRadius={20} borderColor='rgba(217, 217, 217, 1)' color='rgba(64, 122, 255, 1)' borderWidth={0.5} unfilledColor='rgba(217, 217, 217, 1)'/>
+                            
                         </View>
                     <View>
-                        <View style={styles.progress}>
+                        <View style={styles.frameProgress}>
                             <Text style={styles.textProgress}>Energy</Text>
                             
-                            <Progress.Bar progress={0} width={200} height={10} color='#407AFF' backgroundColor='#FFFFFF' />
+                            <Progress.Bar style={styles.progres} progress={0} width={170} height={10}  borderRadius={20} borderColor='rgba(217, 217, 217, 1)' color='rgba(64, 122, 255, 1)' borderWidth={0.5} unfilledColor='rgba(217, 217, 217, 1)'/>
                             
                         </View>
-                        <View style={styles.progress}>
+                        <View style={styles.frameProgress}>
                             <Text style={styles.textProgress}>Reward ratio</Text>
                             
-                            <Progress.Bar  progress={0} width={200} height={10} color='#407AFF' backgroundColor='#FFFFFF'/>
+                            <Progress.Bar style={styles.progres} progress={0} width={170} height={10}  borderRadius={20} borderColor='rgba(217, 217, 217, 1)' color='rgba(64, 122, 255, 1)' borderWidth={0.5} unfilledColor='rgba(217, 217, 217, 1)'/>
                             
                         </View>
                         </View>
@@ -70,14 +70,14 @@ const Runners = () =>{
                     
                     <Text style={styles.textMoney} >160 PMT</Text>
                     <View style={{flexDirection:'row'}}>
-                    <TouchableOpacity style={styles.buttonn}>
+                    <TouchableOpacity style={styles.button1}>
                         <Text style={styles.textButtonn} >Buy</Text>
                     </TouchableOpacity>
                     <View>
-                    <TouchableOpacity style={styles.buttonn}>
+                    <TouchableOpacity style={styles.button2}>
                         <Text style={styles.textButtonn}>Add to favorites</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonn}>
+                    <TouchableOpacity style={styles.button2}>
                         <Text style={styles.textButtonn}>Buy & equip</Text>
                     </TouchableOpacity>
                     </View>
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         marginTop:15,
         borderRadius:25,
         justifyContent: 'center',
-        alignItems: 'flex-start', // Aligning items to start
+        alignItems: 'flex-start', 
         marginLeft: 10,
         paddingLeft: 20,
     },
@@ -119,14 +119,26 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginTop: 5,
     },
+    frameProgress:{
+        
+        flexDirection: 'row',
+        
+    },
     textProgress:{
         color: '#FFFFFF',
-        fontSize: 20,
+        fontSize: 12,
         fontWeight: 'bold',
-        fontSize: 15, 
-        alignSelf:'center',
-        marginRight:25 ,
+        textAlign: 'center',
+        justifyContent: 'center',
+        marginTop:10,
+        marginLeft:5,
+        alignSelf: 'flex-start',
+    },
+    progres:{
+        marginRight:5,
+        alignSelf:'flex-end',
         
+
     },
     frame1:{
         backgroundColor:'#222834',
@@ -144,23 +156,29 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 45,
     },
-    progress:{
-        flexDirection:'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
     Stats:{
         width:200,
         height:150,
     },
-    buttonn:{
+    button1:{
         backgroundColor: '#407AFF',
         borderRadius: 20,
         paddingHorizontal: 10,
         paddingVertical: 10,
-        height: 35,
+        height: 40,
         marginTop: 10,
         width:175,
+    },
+    button2:{
+        backgroundColor: '#2D2D2D',
+        borderRadius: 20,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        height: 40,
+        marginTop: 10,
+        width:175,
+        borderColor:'#407AFF',
+        borderWidth:1,
     },
     textButtonn:{
         color: '#FFFFFF',
@@ -178,7 +196,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#444',
         borderRadius: 30,
         width: 50,
-        height: 50,
+        height: 40,
         justifyContent: 'center',
         alignItems: 'center',
     },

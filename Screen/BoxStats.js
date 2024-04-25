@@ -5,7 +5,7 @@ import { faLessThan, faBell, faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import CircularProgress from "./CircleProgress";
 
-const Hourglass = () =>{
+const BoxStats = () =>{
     return(
         <SafeAreaView style={{ flex: 1, backgroundColor: '#131720' }}>
                 <StatusBar barStyle="auto" />
@@ -31,31 +31,25 @@ const Hourglass = () =>{
                 </View>
                 <View style={{alignItems:'center'}}>
                     <View style={styles.frame1} >
-                    <Image source={require('../assets/boost4.png')} style={styles.Stats} />
+                    <Image source={require('../assets/box6.png')} style={styles.Stats} />
                     </View>
                     <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'flex-start',marginTop:10}}>
-                        <Text style={styles.textImage}>Hourglass</Text>
-                        <Text style={styles.textMoney}>96 PMT</Text>
+                        <Text style={styles.textImage}>Common Box</Text>
+                        <Text style={styles.textMoney}>350 PMT</Text>
                     </View>
 
 
 
                     <View style ={styles.frame2}>
-                        <Text style={styles.textCircle} >Energy booster</Text>
-                        <CircularProgress style={{alignSelf:'center'}} fill={0} text={null} />
+                        <CircularProgress style={{alignSelf:'center'}} fill={60} text={'Common NFT'} />
+                        <CircularProgress style={{alignSelf:'center'}} fill={30} text={'Rare NFT'} />
+                        <CircularProgress style={{alignSelf:'center'}} fill={10} text={'Epic NFT'} />
                     </View>
 
 
 
-                    <View style={styles.frame3}>
-                    <View>
-                        <View style={styles.progress}>
-                            <Text style={styles.textProgress}>energy</Text>
-                            <Progress.Bar progress={0.5} width={200} height={10} color='#407AFF' backgroundColor='#FFFFFF' />
-                        </View>
-                        </View>
-                    </View>
-                    <View style={{flexDirection:'row'}}>
+                    
+                <View style={styles.frame4}>
                     <TouchableOpacity style={styles.button1}>
                         <Text style={styles.textButton1} >Buy</Text>
                     </TouchableOpacity>
@@ -74,6 +68,10 @@ const Hourglass = () =>{
 }
 
 const styles = StyleSheet.create({
+    frame4:{
+        flexDirection:'row',
+        marginTop:100,
+    },
     textMoney:{
         color: '#FFFFFF',
         fontSize: 20,
@@ -88,7 +86,8 @@ const styles = StyleSheet.create({
         height:'10%',
         marginTop:50,
         justifyContent: 'center',
-        alignItems: 'flex-start',
+        alignItems: 'baseline',
+        alignSelf: 'center',
     },
     textCircle:{
         color: '#FFFFFF',
@@ -132,7 +131,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         alignItems: 'flex-start',
-        marginRight:150 ,
+        marginRight:110 ,
     },
     progress:{
         flexDirection:'row',
@@ -141,7 +140,7 @@ const styles = StyleSheet.create({
     },
     Stats:{
         width:200,
-        height:150,
+        height:200,
     },
     button1:{
         backgroundColor: '#407AFF',
@@ -151,6 +150,7 @@ const styles = StyleSheet.create({
         height: 40,
         marginTop: 10,
         width:175,
+        
     },
     button2:{
         backgroundColor: '#2D2D2D',
@@ -162,6 +162,7 @@ const styles = StyleSheet.create({
         width:175,
         borderColor:'#407AFF',
         borderWidth:1,
+        
     },
     textButton1:{
         color: '#FFFFFF',
@@ -224,4 +225,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Hourglass;
+export default BoxStats;

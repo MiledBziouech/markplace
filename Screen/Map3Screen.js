@@ -6,7 +6,7 @@ import GetLocation from 'react-native-get-location';
 
 const GOOGLE_MAPS_APIKEY =  'AIzaSyArDHKxkI_wPzZB71m3HUjZgIuiZrGfg-k'; // Replace with your actual API key
 
-const Map2Screen = () => {
+const Map3Screen = () => {
   const [currentLocation, setCurrentLocation] = useState(null); // State to hold the current location
 
   useEffect(() => {
@@ -100,4 +100,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Map2Screen;
+export default Map3Screen;
